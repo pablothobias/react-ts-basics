@@ -10,6 +10,7 @@ height: 25vh;
 background-color: #515050;
 color: #ffffff;
 border-radius: 10px;
+margin: 20px 0;
 `;
 
 export { CourseGoalContainerCss };
