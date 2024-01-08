@@ -13,9 +13,3 @@ export const AppContainer = styled.div`
   height: 60vh;
   width: 80vw;
 `;
-
-export const AddButtonCss = styled.button`
-  position: absolute;
-  top: 64px;
-  left: 32px;
-`;

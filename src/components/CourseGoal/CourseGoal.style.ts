@@ -10,6 +10,7 @@ color: #515050;
 border-radius: 10px;
 margin: 20px 0;
 padding: 10px;
+min-width: 300px;
 `;
 
 export { CourseGoalContainerCss };
