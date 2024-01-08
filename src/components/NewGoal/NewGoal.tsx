@@ -8,10 +8,10 @@ type NewGoalProps = {
 };
 
 const NewGoal: FC<NewGoalProps> = ({ handleAddGoal }) => {
-    const goalInputRef = useRef<HTMLInputElement>(null);
-    const summaryInputRef = useRef<HTMLInputElement>(null);
+    const goalInputRef = useRef<HTMLInputElement | null>(null);
+    const summaryInputRef = useRef<HTMLInputElement | null>(null);
 
-    const handleSubmit = (event: FormEvent) => {
+    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
         if (!goalInputRef.current?.value || !summaryInputRef.current?.value) {
@@ -24,6 +24,8 @@ const NewGoal: FC<NewGoalProps> = ({ handleAddGoal }) => {
         };
 
         handleAddGoal({ goal });
+
+        event.currentTarget.reset();
     };
 
     return (
