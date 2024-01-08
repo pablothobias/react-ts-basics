@@ -1,21 +1,15 @@
 import { useState } from 'react';
-import styled from 'styled-components';
+import { AppContainer, AddButtonCss } from './App.style';
 
 import './App.css'
 
-import CourseGoal from './components/CourseGoal/CourseGoal';
+import CourseGoalList from './components/CourseGoalList/CourseGoalList';
 import Header from './components/Header/Header';
 import { TitleHeaderCss } from './components/Header/Header.style';
 
 import goalsImg from './assets/goalsImg.png';
 
-const AppContainer = styled.div`
-  overflow: auto;
-  max-height: 90vh;
-  width: 100%;
-`;
-
-type CourseGoal = {
+export type CourseGoal = {
   title: string;
   description: string;
   id: number;
@@ -44,22 +38,8 @@ function App() {
         <Header img={{ src: goalsImg, alt: 'A list of goals' }}>
           <TitleHeaderCss>Your Course Goal</TitleHeaderCss>
         </Header>
-        <button onClick={handleAddGoal}>Add Goal</button>
-        <ul>
-          {
-            courseGoals
-              .map((goal: CourseGoal) => (
-                <li key={goal.id}>
-                  <CourseGoal
-                    id={goal.id}
-                    title={goal.title}
-                    description={goal.description}
-                    handleDeleteGoal={handleDeleteGoal}
-                  />
-                </li>
-              ))
-          }
-        </ul>
+        <AddButtonCss onClick={handleAddGoal}>Add Goal</AddButtonCss>
+        <CourseGoalList courseGoals={courseGoals} handleDeleteGoal={handleDeleteGoal} />
       </AppContainer>
     </>
   )

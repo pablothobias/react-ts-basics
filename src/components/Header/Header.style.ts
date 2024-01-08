@@ -8,10 +8,11 @@ export const HeaderContainerCss = styled.div`
     left: 0;
     align-items: center;
     justify-content: space-between;
-    width: 96vw;
+    width: 76vw;
     height: 8vh;
     padding: 0 2vw;
     background-color: #515050;
+    border-radius: 10px 10px 0 0;
 `;
 
 export const ImageHeaderCss = styled.img`
@@ -20,6 +21,7 @@ export const ImageHeaderCss = styled.img`
 `;
 
 export const TitleHeaderCss = styled.h1`
+    text-align: center;
     font-size: 1.8rem;
     color: #ffffff;
 `;

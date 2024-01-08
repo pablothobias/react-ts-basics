@@ -5,12 +5,11 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-width: 50vw;
-height: 25vh;
-background-color: #515050;
-color: #ffffff;
+background-color: #ffffff;
+color: #515050;
 border-radius: 10px;
 margin: 20px 0;
+padding: 10px;
 `;
 
 export { CourseGoalContainerCss };
