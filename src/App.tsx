@@ -20,7 +20,6 @@ function App() {
   const [courseGoals, setCourseGoals] = useState<Array<CourseGoal>>([]);
 
   const handleAddGoal = ({ goal }: { goal: CourseGoal }) => {
-
     setCourseGoals((prevCourseGoals) => {
       const lastId = prevCourseGoals[prevCourseGoals.length - 1]?.id;
       const currentId = lastId ? lastId + 1 : 1;
@@ -28,7 +27,9 @@ function App() {
     });
   };
 
-  const handleDeleteGoal = (id: number) => {
+  const handleDeleteGoal = (id?: number) => {
+    if (!id) return;
+
     setCourseGoals((prevCourseGoals) => {
       return prevCourseGoals.filter((goal) => goal.id !== id);
     });

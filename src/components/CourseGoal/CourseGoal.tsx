@@ -3,18 +3,18 @@ import { CourseGoalContainerCss } from './CourseGoal.style.ts';
 interface CourseGoalProps {
     title: string;
     description: string;
-    id: number;
-    handleDeleteGoal: (id: number) => void;
+    id?: number;
+    handleDeleteGoal: (id?: number) => void;
 }
 
-const CourseGoal: React.FC<CourseGoalProps> = (props) => {
+const CourseGoal: React.FC<CourseGoalProps> = ({ title, description, id, handleDeleteGoal }) => {
     return (
         <CourseGoalContainerCss>
             <div>
-                <h2>{props.title}</h2>
-                <p>{props.description}</p>
+                <h2>{title}</h2>
+                <p>{description}</p>
             </div>
-            <button onClick={() => props.handleDeleteGoal(props.id)}>DELETE</button>
+            <button onClick={() => handleDeleteGoal(id)}>DELETE</button>
         </CourseGoalContainerCss>
     );
 };
